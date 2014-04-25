@@ -1,10 +1,3 @@
-var redis = require("redis");
-var client = redis.createClient();
-client.on("error", function(err){
-    console.log("Error", err);
-});
-client.set("wangbo", "yes it is");
-client.set([]);
-client.get("wangbo", function(err, reply){
-    console.log(reply);
-})
+var data = new Array(1,2,3,4);
+console.log(typeof data)
+console.log(data.shift())
