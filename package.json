@@ -1,0 +1,18 @@
+{
+  "name": "wimelo",
+  "version": "0.0.0",
+  "description": "wimelo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://wangboo.github.com/wimelo"
+  },
+  "keywords": [
+    "frame game"
+  ],
+  "author": "wangboo",
+  "license": "BSD"
+}
