@@ -1,21 +1,24 @@
 {
-  "name": "wimelo",
+  "name": "wemilo",
   "version": "0.0.0",
-  "description": "wimelo",
+  "description": "this is a wemilo project, a websocket game framework",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "http://wangboo.github.com/wimelo"
+    "url": "https://github.com/wangboo/wemilo"
   },
   "keywords": [
-    "frame game"
+    "wemilo",
+    "websocket",
+    "game",
+    "framework"
   ],
-    "dependencies": {
-        "websocket": "1.0.8"
-    },
-  "author": "wangboo",
-  "license": "BSD"
+  "author": "wangbo",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/wangboo/wemilo/issues"
+  }
 }

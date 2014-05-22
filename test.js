@@ -1,3 +1,15 @@
-var data = new Array(1,2,3,4);
-console.log(typeof data)
-console.log(data.shift())
+
+require("./support/")
+
+function Test () {
+	this.a = "a"
+	this.b = "b"
+	this.say = function(){
+		console.log("hello")
+	}
+}
+
+var hash = new Test()
+var co = hash.clone()
+console.log(co)
+co.say()
