@@ -1,19 +1,14 @@
 
-function Test () {
-	this.weapon = null;
-	this.hello = function(fuck, you) {
-		console.log(this);
-		console.log(fuck, you);
-	}
-	this.invoke = function() {
-		var args = Array.prototype.slice.call(arguments);
-		var method = args.shift();
-		this[method].apply(this, args);
-	}
-	console.log(this);
-}
+// var Attack = require("./magic_framework/attack.js");
 
-var test = new Test()
-test.invoke("hello", "1", 'aazz');
+// var a0 = Attack.physic({}, {}, 20);
+// var a1 = Attack.magic({}, {}, 10).addSubType(Attack.SUB_TYPE.NO_ANGER);
 
+// console.log(a0);
+// console.log(a1);
+// var digest = require("md5").digest_s
+// console.log(JSON.stringify({"sea": "asd"}));
+// console.log(digest("hahaha"));
 
+var time = new Date().getTime();
+console.log(time);

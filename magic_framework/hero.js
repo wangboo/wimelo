@@ -6,7 +6,7 @@ var Addon = require("../support/addon.js")
 function Hero (name, attr) {
 	this.scene = null;
 	this.group = null;
-
+	this.enemyGroup = null;
 	this.name = name;
 
 	this.ruseMagic = null;
@@ -35,8 +35,41 @@ function Hero (name, attr) {
 
 	// 攻击某个单位
 	// 如果单位还活着，返回ture，反之返回false
-	this.attack = function(recv) {
-		var plus = this.plus;
+	this.attack = function(recv, atk) {
+		//自己攻击前
+		on("beforeAttack", this, recv, atk);
+		// 我方攻击前
+		group.onButExcept("beforeAttack", this, recv, atk, this);
+		// 攻击发出
+		recv.beAttack(this, atk);
+		// 我方攻击后
+		group.onButExcept("beforeAttack", this, recv, atk, this);
+		// 自己攻击后
+		on("afterAttack", this, recv, atk);
+	}
+
+	// 被攻击
+	this.beAttack = function(atker, atk) {
+		//自己被攻击前
+		on("beforeBeAttack", atker, this, atk);
+		// 我方被攻击前
+		group.onButExcept("beforeBeAttack", atker, this, atk, this);
+		// 受到攻击
+		hurt(this, atk);
+		// 我方被攻击后
+		group.onButExcept("beforeBeAttack", atker, this, atk, this);
+		// 自己被攻击后
+		on("afterBeAttack", atker, this, atk);
+	}
+
+	// 受到攻击，计算伤害
+	this.hurt = function(atker, atk) {
+		
+		console.log(atker.name + "" +);
+	}
+
+	this.cure = function(sender, cure) {
+		
 	}
 
 	//英雄是否死亡

@@ -20,6 +20,9 @@ Object.defineProperty(Object.prototype, "extend", {
 Object.defineProperty(Object.prototype, "clone", {
 	enumerable: false,
 	value: function(){
+        if(this instanceof Array) {
+            return this.slice();
+        }
 		var obj = {}
 		var from = this;
 		for(name in from) {
